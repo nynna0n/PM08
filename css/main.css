@@ -1,0 +1,132 @@
+body {
+    font-family: sans-serif;
+    height: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header--fixed {
+    background-color: rgb(101, 88, 126);
+    position: fixed; /* фиксированное положение */
+    z-index: 2; /* положение на странице, так мы спрятали её над всеми «слоями» сайта*/
+
+    alignment: center;
+
+    /* если фиксированная шапка маленька по ширине, можно поставить 100% ширину */
+    width: 100%;
+    height: 80px;
+}
+/* Класс, который добавляется при скролле и показывает шапку */
+.header.is-show {
+    top: 20px; /* она будет плавно выезжать с 0 до 20 пикселей*/
+    z-index: 5; /* устанавливаем индекс так, чтобы шапка была выше всех элементов  */
+}
+
+h1{
+    color: #ffffff;
+}
+
+main{
+    height: 100%;
+    padding-bottom: 70px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+/* каталог */
+.good-item {
+    margin: 10px 0;
+    padding: 20px;
+    border: solid 1px gray;
+    border-radius: 3px;
+}
+
+.good-item__id {
+    padding-top: 30px;
+    color: steelblue;
+}
+
+.good-item__name {
+    padding-top: 10px;
+    font-size: 1.1em;
+}
+
+.good-item__price {
+    padding-top: 10px;
+    color: red;
+}
+
+.good-item__btn-add {
+    margin-top: 30px;
+}
+
+/* Корзина */
+
+.cart-item__btn-dec-count {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cart-item__btn-inc-count {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cart-item__btn-remove {
+    cursor: pointer;
+}
+
+
+/* Сравнение товаров */
+
+.compare-table th {
+    text-align: center;
+}
+
+.compare-table th:first-child {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.compare-table__good {
+    font-size: 1.1em;
+    color: steelblue;
+}
+
+.compare-table__photo {
+    max-width: 150px;
+}
+
+.compare-table__price {
+    color: red;
+}
+
+.compare-table__remove {
+    color: steelblue;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.compare-table tbody tr td:first-child {
+    font-weight: bold;
+}
+
+
+.compare-table[data-compare="all"] tbody tr {
+     display: table-row;
+}
+
+.compare-table[data-compare="equal"] tbody tr:not(.-equal) {
+    display: none;
+}
+
+.compare-table[data-compare="not-equal"] tbody tr.-equal {
+    display: none;
+}
+
+
+
